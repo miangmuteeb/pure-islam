@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Islam</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="Styles/styles.css">
+     <!-- FontAwsome -->
+     <link rel="icon" type="image/png" href="Styles/Pics/favicon.jpeg">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <video id="video-background" autoplay muted loop>
+        <source src="/Styles/Pics/5087985-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="homepage.html">Pure Islam</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="allnaats.html">Naats</a></li>
+                            <li><a class="dropdown-item" href="prayers.html" target="_blank">Tasbeeh Counter</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="store.html">Our Store( Soon)</a></li>
+                        </ul> 
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light"  style="border: 1 px solid white;"><a href="index.html" style="color: #0053a7; text-decoration: none;"> LogOut</a></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--  Crousel Start &Nav End-->
+    <div id="islamic-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#islamic-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#islamic-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#islamic-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <!-- Landing Page Content -->
+                <img src="Styles/Pics/home-page wallpaper.webp" class="d-block w-100" alt="Landing Page Image">
+                <div class="carousel-caption">
+                    <h1>Welcome to Pure Islam</h1>
+                    <p>Learn about Islam and its teachings</p>
+                    <div class="button-container"  >
+                        <a class="btn  custom-btn" href="allnaats.html"  style="border: 1px solid white;background-color: black; color: white;" >Play Naats</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <!-- Quranic Ayat Content -->
+                <img src="Styles/Pics/crousel-2.webp" class="d-block w-100" alt="Quranic Ayat Image">
+                <div class="carousel-caption">
+                    <h1>Quranic Ayat</h1>
+                    <h3>"And indeed, We will guide him to the straight path."</h3>
+                    <p>(Quran 92:12)</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <!-- Hadith Content -->
+                <img src="Styles/Pics/crousel-3.webp" class="d-block w-100" alt="Hadith Image">
+                <div class="carousel-caption">
+                    <h1>Hadith</h1>
+                    <p class="text-center">"The best among you are those who have the best manners and character."</p>
+                    <p>(Reference: Sahih al-Bukhari, Book 73, Hadith 56)</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#islamic-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#islamic-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
+    
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="text-center" id="heading">Our Services</h2>
+    
+            <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+    
+                    <!-- First Carousel Item -->
+                    <div class="carousel-item active">
+                        <div class="row row-cols-1 row-cols-md-2 g-4 align-items-stretch justify-content-center">
+    
+                            <!-- Card 1 -->
+                            <div class="col mb-4">
+                                <div class="card border-0 shadow">
+                                    <img src="Styles/Pics/naat.webp" class="card-img-top" alt="Free Naats">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Free Naats</h5>
+                                        <p class="card-text">Enjoy a wide collection of free Naats.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Card 2 -->
+                            <div class="col mb-4">
+                                <div class="card border-0 shadow">
+                                    <img src="Styles/Pics/namaz.jpg" class="card-img-top" alt="Free Prayer Tracker">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Prayer Tracker</h5>
+                                        <p class="card-text">Track your Prayers for free and easy to use.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Second Carousel Item -->
+                    <div class="carousel-item">
+                        <div class="row row-cols-1 row-cols-md-2 g-4 align-items-stretch justify-content-center">
+    
+                            <!-- Card 3 -->
+                            <div class="col mb-4">
+                                <div class="card border-0 shadow">
+                                    <img src="Styles/Pics/Community Helpers Poster.png" class="card-img-top" alt="E Store">
+                                    <div class="card-body">
+                                        <h5 class="card-title">E Store</h5>
+                                        <p class="card-text">Shop online with ease and convenience.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Card 4 -->
+                            <div class="col mb-4">
+                                <div class="card border-0 shadow">
+                                    <img src="Styles/Pics/needy.jpeg" class="card-img-top" alt="Helping the Needy">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Helping the Needy</h5>
+                                        <p class="card-text">Support those in need through our programs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section> 
+   
+    <div class="container mt-5">
+        <h2 class="display-4 text-center" id="heading">Namaz Timings</h2>
+        <div class="namaz-timings-container">
+          
+            <div class="form-group">
+                <label for="city" class="form-label">Select City:</label>
+                <select id="city" class="form-control">
+                    <option value="">-- Select a City --</option>
+                    <option value="Karachi">Karachi</option>
+                    <option value="Lahore">Lahore</option>
+                    <option value="Islamabad">Islamabad</option>
+                    <option value="Peshawar">Peshawar</option>
+                    <option value="Quetta">Quetta</option>
+                    <!-- Add more cities as needed -->
+                </select>
+            </div>
+            
+            <div class="timing-table table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Prayer</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="timingsBody">
+                        <!-- Namaz timings will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <!-- Prayer Tracker -->
+     <section>
+    <div class="container mt-5">
+        <h2 class="text-center display-4 " id="heading">Prayer Tracker</h2>
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="date" class="form-label">Select Date:</label>
+                <input type="date" id="date" class="form-control">
+            </div>
+        </div>
+        
+        <div id="prayerCheckboxes" class="prayer-checkboxes">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Fajr" id="fajr">
+                <label class="form-check-label" for="fajr">Fajr</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Dhuhr" id="dhuhr">
+                <label class="form-check-label" for="dhuhr">Dhuhr</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Asr" id="asr">
+                <label class="form-check-label" for="asr">Asr</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Maghrib" id="maghrib">
+                <label class="form-check-label" for="maghrib">Maghrib</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Isha" id="isha">
+                <label class="form-check-label" for="isha">Isha</label>
+            </div>
+            <button class="btn btn-primary mt-3" id="saveBtn">Save</button>
+        </div>
+    
+        <div class="mt-3">
+            <button class="btn btn-danger" id="resetBtn">Reset Records</button>
+        </div>
+    
+        <div class="table-responsive mt-5">
+            <h3>Track Record</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Fajr</th>
+                        <th>Dhuhr</th>
+                        <th>Asr</th>
+                        <th>Maghrib</th>
+                        <th>Isha</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody id="trackRecordTable">
+                    <!-- Records will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+     
+        <div class="container mb-5">
+            <h2 class="text-center display-4 " id="heading">Daily Dua</h2>
+            <div class="daily-dua-container">
+               
+                <div id="daily-dua" class="daily-dua"></div>
+                <div id="dua-source" class="dua-source"></div>
+            </div>
+        </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul class="footer-icons">
+                            <li><a href="https://www.facebook.com/ladlamian.muteeb.1" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://x.com/Muteebramzan" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/muhammad_muteeb_ramzan/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="www.linkedin.com/in/muteebramzan" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>&copy; 2024 Pure Islam. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+<script>
+
+        document.getElementById('date').addEventListener('change', function() {
+            document.getElementById('prayerCheckboxes').classList.add('show');
+        });
+
+        document.getElementById('saveBtn').addEventListener('click', function() {
+            const date = document.getElementById('date').value;
+            if (!date) {
+                alert('Please select a date.');
+                return;
+            }
+
+            const prayers = {
+                Fajr: document.getElementById('fajr').checked,
+                Dhuhr: document.getElementById('dhuhr').checked,
+                Asr: document.getElementById('asr').checked,
+                Maghrib: document.getElementById('maghrib').checked,
+                Isha: document.getElementById('isha').checked
+            };
+
+            localStorage.setItem(date, JSON.stringify(prayers));
+            displayRecords();
+        });
+
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            localStorage.clear();
+            displayRecords();
+        });
+
+        function displayRecords() {
+            const tbody = document.getElementById('trackRecordTable');
+            tbody.innerHTML = '';
+
+            for (let i = 0; i < localStorage.length; i++) {
+                const date = localStorage.key(i);
+                const prayers = JSON.parse(localStorage.getItem(date));
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${date}</td>
+                    <td>${prayers.Fajr ? '✔' : '✘'}</td>
+                    <td>${prayers.Dhuhr ? '✔' : '✘'}</td>
+                    <td>${prayers.Asr ? '✔' : '✘'}</td>
+                    <td>${prayers.Maghrib ? '✔' : '✘'}</td>
+                    <td>${prayers.Isha ? '✔' : '✘'}</td>
+                    <td><button class="btn btn-info btn-sm editBtn" data-date="${date}">Edit</button></td>
+                `;
+                tbody.appendChild(row);
+            }
+
+            const editBtns = document.querySelectorAll('.editBtn');
+            editBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const date = this.getAttribute('data-date');
+                    const prayers = JSON.parse(localStorage.getItem(date));
+                    
+                    // Pre-select checkboxes based on saved data
+                    document.getElementById('date').value = date;
+                    document.getElementById('fajr').checked = prayers.Fajr;
+                    document.getElementById('dhuhr').checked = prayers.Dhuhr;
+                    document.getElementById('asr').checked = prayers.Asr;
+                    document.getElementById('maghrib').checked = prayers.Maghrib;
+                    document.getElementById('isha').checked = prayers.Isha;
+
+                    // Show checkboxes
+                    document.getElementById('prayerCheckboxes').classList.add('show');
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', displayRecords);
+        const duas = [
+            {
+                text: "رَبِّ زِدْنِي عِلْمًا",
+                source: "Quran 20:114",
+                translation: "My Lord, increase me in knowledge."
+            },
+            {
+                text: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+                source: "Quran 2:201",
+                translation: "Our Lord, give us in this world [that which is] good and in the Hereafter [that which is] good and protect us from the punishment of the Fire."
+            },
+            {
+                text: "اللّهُـمَّ إِنّـي أَعـوذُ بِكَ مِنْ عِلْـمٍ لا يَنفَـعُ، وَمِنْ قَلْبٍ لا يَخْشَـعُ، وَمِنْ نَفْـسٍ لا تَشْبَـعُ، وَمِنْ دَعْـوَةٍ لا يُسْتَجَـابُ لَه",
+                source: "Sahih Muslim",
+                translation: "O Allah, I seek refuge in You from knowledge which does not benefit, from a heart which does not fear, from a soul which is not satisfied, and from a supplication which is not answered."
+            },
+            {
+        text: "اللهم إني أعوذ بك من فتنة المحيا والممات",
+        translation: "O Allah, I seek refuge in You from the trials of life and death.",
+        source: "Sahih Muslim"
+    },
+    {
+        text: "اللهم اغفر لي ذنبي ووسع لي في داري وبارك لي في رزقي",
+        translation: "O Allah, forgive me my sins and expand my home, and bless me in my provision.",
+        source: "Sunan Ibn Majah"
+    },
+    {
+        text: "اللهم إني أعوذ بك من علم لا ينفع ومن قلب لا يخشع ومن نفس لا تشبع",
+        translation: "O Allah, I seek refuge in You from knowledge that does not benefit, a heart that does not fear, and a soul that is not satisfied.",
+        source: "Sahih Muslim"
+    },
+    {
+        text: "اللهم اهدني واحفظني وأنزل علي بركاتك",
+        translation: "O Allah, guide me, protect me, and bestow Your blessings upon me.",
+        source: "Sahih Bukhari"
+    },
+    {
+        text: "اللهم إني أسألك الجنة وما قرب إليها من قول أو عمل وأعوذ بك من النار وما قرب إليها من قول أو عمل",
+        translation: "O Allah, I ask You for paradise and every deed that will bring me closer to it, and I seek refuge in You from the fire and every deed that will bring me closer to it.",
+        source: "Sunan Ibn Majah"
+    },
+    {
+        text: "اللهم آت نفسي تقواها وزكها أنت خير من زكاها",
+        translation: "O Allah, grant my soul piety and my conscience purity.",
+        source: "Sahih Muslim"
+    },
+          
+        ];
+
+        function getRandomDua() {
+            const randomIndex = Math.floor(Math.random() * duas.length);
+            return duas[randomIndex];
+        }
+
+        window.onload = function() {
+            const dua = getRandomDua();
+            document.getElementById('daily-dua').innerText = dua.text + "\n\n" + dua.translation;
+            document.getElementById('dua-source').innerText = "Source: " + dua.source;
+        };
+        const namazTimings = {
+            "Karachi": {
+                "Fajr": "4:30 AM",
+                "Dhuhr": "1:30 PM",
+                "Asr": "5:00 PM",
+                "Maghrib": "7:15 PM",
+                "Isha": "8:45 PM"
+            },
+            "Lahore": {
+                "Fajr": "4:20 AM",
+                "Dhuhr": "1:15 PM",
+                "Asr": "4:45 PM",
+                "Maghrib": "7:05 PM",
+                "Isha": "8:35 PM"
+            },
+            "Islamabad": {
+                "Fajr": "4:25 AM",
+                "Dhuhr": "1:20 PM",
+                "Asr": "4:50 PM",
+                "Maghrib": "7:10 PM",
+                "Isha": "8:40 PM"
+            },
+            "Peshawar": {
+                "Fajr": "4:30 AM",
+                "Dhuhr": "1:25 PM",
+                "Asr": "4:55 PM",
+                "Maghrib": "7:15 PM",
+                "Isha": "8:45 PM"
+            },
+            "Quetta": {
+                "Fajr": "4:35 AM",
+                "Dhuhr": "1:35 PM",
+                "Asr": "5:05 PM",
+                "Maghrib": "7:20 PM",
+                "Isha": "8:50 PM"
+            }
+            // Add more cities and their timings as needed
+        };
+
+        document.getElementById('city').addEventListener('change', function() {
+            const selectedCity = this.value;
+            const timingsBody = document.getElementById('timingsBody');
+            timingsBody.innerHTML = '';
+
+            if (selectedCity && namazTimings[selectedCity]) {
+                const timings = namazTimings[selectedCity];
+                for (const [prayer, time] of Object.entries(timings)) {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `<td>${prayer}</td><td>${time}</td>`;
+                    timingsBody.appendChild(tr);
+                }
+            }
+        });
+</script>
+    <!-- Bootstrap Bundle with Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-rs3FWF0D1daWCiJj1Vvu4zS+24TnJK+9jPSRSR+e4kcphNYA8+tRHSPuzXZLO8uB" crossorigin="anonymous"></script>
+  <script src="scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+

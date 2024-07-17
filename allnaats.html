@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naat Player</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .naat-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .naat-card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn-play,
+        .btn-download {
+            background-color: transparent;
+            border: none;
+            color: #007bff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .naat-title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover; /* Ensure the video covers the entire screen */
+        }
+  
+    </style>
+</head>
+<body>
+    <video id="video-background" autoplay muted loop>
+        <source src="/Styles/Pics/13348531-uhd_3840_2160_30fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="homepage.html">Pure Islam</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="allnaats.html">Naats</a></li>
+                            <li><a class="dropdown-item" href="prayers.html" target="_blank">Tasbeeh Counter</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="store.html">Our Store (Soon)</a></li>
+                        </ul> 
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto"> 
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light" style="border: 1px solid white;">
+                            <a href="index.html" style="color: #1e61a5; text-decoration: none;">Logout</a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+       <div><h1 class="text-center mt-4">Naats</h1></div> 
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card naat-card">
+                    <div class="card-body">
+                        <button class="btn btn-play" onclick="playNaat('naat1', this)"><i class="fas fa-play"></i></button>
+                        <span class="naat-title">Ankhen Ro Ro Ke Sujane Wale</span>
+                        <a href="Styles/audio/Download Aankhein Ro Ro Ke Sujane Wale MP3 Naat Sharif by Owais Raza Qadri.mp3" download>
+                            <button class="btn btn-download"><i class="fas fa-download"></i></button>
+                        </a>
+                        <audio id="naat1" src="Styles/audio/Download Aankhein Ro Ro Ke Sujane Wale MP3 Naat Sharif by Owais Raza Qadri.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card naat-card">
+                    <div class="card-body">
+                        <button class="btn btn-play" onclick="playNaat('naat2', this)"><i class="fas fa-play"></i></button>
+                        <span class="naat-title">Bhar Do Jholi Meri</span>
+                        <a href="Styles/audio/Download Bhar Do Jholi Meri Ya Muhammad MP3 Naat Sharif by Amjad Sabri.mp3" download>
+                            <button class="btn btn-download"><i class="fas fa-download"></i></button>
+                        </a>
+                        <audio id="naat2" src="Styles/audio/Download Bhar Do Jholi Meri Ya Muhammad MP3 Naat Sharif by Amjad Sabri.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card naat-card">
+                    <div class="card-body">
+                        <button class="btn btn-play" onclick="playNaat('naat3', this)"><i class="fas fa-play"></i></button>
+                        <span class="naat-title">Ae Rasool Ameen</span>
+                        <a href="Styles/audio/Download Ae Rasool e Ameen MP3 Naat Sharif by Junaid Jamshed.mp3" download>
+                            <button class="btn btn-download"><i class="fas fa-download"></i></button>
+                        </a>
+                        <audio id="naat3" src="Styles/audio/Download Ae Rasool e Ameen MP3 Naat Sharif by Junaid Jamshed.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card naat-card">
+                    <div class="card-body">
+                        <button class="btn btn-play" onclick="playNaat('naat4', this)"><i class="fas fa-play"></i></button>
+                        <span class="naat-title">Hijrat E Nabwi</span>
+                        <a href="Styles/audio/Download Hijrat e Nabvi MP3 Naat Sharif by Junaid Jamshed.mp3" download>
+                            <button class="btn btn-download"><i class="fas fa-download"></i></button>
+                        </a>
+                        <audio id="naat4" src="Styles/audio/Download Hijrat e Nabvi MP3 Naat Sharif by Junaid Jamshed.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card naat-card">
+                    <div class="card-body">
+                        <button class="btn btn-play" onclick="playNaat('naat5', this)"><i class="fas fa-play"></i></button>
+                        <span class="naat-title">Jab Waqt E Naza Aye</span>
+                        <a href="Styles/audio/Download Jab Waqt Naza Aye Last MP3 Naat Sharif by Amjad Sabri.mp3" download>
+                            <button class="btn btn-download"><i class="fas fa-download"></i></button>
+                        </a>
+                        <audio id="naat5" src="Styles/audio/Download Jab Waqt Naza Aye Last MP3 Naat Sharif by Amjad Sabri.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card naat-card">
+                    <div class="card-body">
+                        <button class="btn btn-play" onclick="playNaat('naat6', this)"><i class="fas fa-play"></i></button>
+                        <span class="naat-title">Ya Muhammad Sale Ala</span>
+                        <a href="Styles/audio/Download Ya Muhammad Sallay Ala MP3 Qawwali By Sibtain Haider.mp3" download>
+                            <button class="btn btn-download"><i class="fas fa-download"></i></button>
+                        </a>
+                        <audio id="naat6" src="Styles/audio/Download Ya Muhammad Sallay Ala MP3 Qawwali By Sibtain Haider.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <!-- Additional Naats -->
+            <div class="col-md-4 mb-3">
+                <div class="card naat-card">
+                    <div class="card-body">
+                        <button class="btn btn-play" onclick="playNaat('naat7', this)"><i class="fas fa-play"></i></button>
+                        <span class="naat-title">Koi Duniya E Ata Mein</span>
+                        <a href="Styles/audio/You/Download Koi Duniya E Ata Mein MP3 Naat By Syed Hassan Ullah Hussaini.mp3" download>
+                            <button class="btn btn-download"><i class="fas fa-download"></i></button>
+                        </a>
+                        <audio id="naat7" src="Styles/audio/Download Koi Duniya E Ata Mein MP3 Naat By Syed Hassan Ullah Hussaini.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card naat-card">
+                    <div class="card-body">
+                        <button class="btn btn-play" onclick="playNaat('naat8', this)"><i class="fas fa-play"></i></button>
+                        <span class="naat-title">Karam Mangta Hoon</span>
+                        <a href="Styles/audio/Download Karam Mangta Hoon MP3 Dua By Owais Raza Qadri.mp3" download>
+                            <button class="btn btn-download"><i class="fas fa-download"></i></button>
+                        </a>
+                        <audio id="naat8" src="Styles/audio/Download Karam Mangta Hoon MP3 Dua By Owais Raza Qadri.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card naat-card">
+                    <div class="card-body">
+                        <button class="btn btn-play" onclick="playNaat('naat9', this)"><i class="fas fa-play"></i></button>
+                        <span class="naat-title">Hazoor Aesa Koi Intezaam Ho gyee</span>
+                        <a href="Styles/audio/Download Huzoor Aisa Koi Intezam Ho Jaye MP3 Naat By Junaid Jamshed.mp3" download>
+                            <button class="btn btn-download"><i class="fas fa-download"></i></button>
+                        </a>
+                        <audio id="naat9" src="Styles/audio/Download Huzoor Aisa Koi Intezam Ho Jaye MP3 Naat By Junaid Jamshed.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <ul class="footer-icons">
+                        <li><a href="https://www.facebook.com/ladlamian.muteeb.1" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://x.com/Muteebramzan" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/muhammad_muteeb_ramzan/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="www.linkedin.com/in/muteebramzan" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2024 Pure Islam. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function playNaat(naatId, button) {
+            // Pause all other Naats and reset buttons
+            document.querySelectorAll('audio').forEach(audio => {
+                if (audio.id !== naatId) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }
+            });
+
+            document.querySelectorAll('.btn-play').forEach(btn => {
+                btn.innerHTML = '<i class="fas fa-play"></i>';
+            });
+
+            // Play selected Naat
+            const naat = document.getElementById(naatId);
+            if (naat.paused) {
+                naat.play();
+                button.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                naat.pause();
+                button.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

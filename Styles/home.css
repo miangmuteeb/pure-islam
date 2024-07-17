@@ -1,0 +1,79 @@
+body {
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+color: #fff; /* White text */
+margin: 0;
+padding: 0;
+
+scroll-behavior: smooth;
+font-family: 'Poppins', sans-serif;
+
+}
+.navbar {
+background-image: linear-gradient(to right top, #051937, #004064, #006871, #008f57, #82ac24);
+}
+
+.navbar-brand,
+.nav-link {
+color: #fff !important;
+}
+footer {
+color: #f4f4f9;
+padding: 10px 0;
+background-image: linear-gradient(to right top, #051937, #004064, #006871, #008f57, #82ac24);
+}
+.btn-custom {
+background-color: #fff;
+color: #1D6331;
+border: 2px solid #1D6331;
+transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-custom:hover {
+background-color: #1D6331;
+color: #fff;
+}
+
+footer span {
+font-size: 1.2rem;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+color: #feb47b !important;
+}
+
+#hero {
+
+padding-top: 100px; /* Add some padding top */
+padding-bottom: 100px; /* Add some padding bottom */
+}
+
+.image-animation {
+transition: transform 0.5s; /* Add a transition effect */
+}
+
+.image-animation:hover {
+transform: scale(1.1); /* Scale the image on hover */
+}
+
+.heading-text {
+color: #333; /* Change the text color */
+}
+
+  .btn-custom {
+    background-color: #68b684; /* Light green gradient color */
+    background-image: linear-gradient(to bottom, #1d4e30, #16f594); /* Gradient effect */
+    color: #fff; /* Text color */
+    border: none; /* Remove default border */
+    padding: 12px 24px; /* Adjust padding as needed */
+    border-radius: 6px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from anchor tag */
+    display: inline-block; /* Make it inline-block to adjust width */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  }
+
+  .btn-custom:hover {
+    background-color: #143f14; /* Darker green on hover */
+  }
+
+

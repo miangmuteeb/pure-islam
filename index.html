@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <style>
+        body {
+           
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .card-wrapper {
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 100%;
+         
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-front,
+        .card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(236, 236, 236, 0.2);
+            border-radius: 40px;
+            background: #000000;
+        }
+
+        .card-front {
+            background: #000000;
+            transform: rotateY(0deg);
+        }
+
+        .card-back {
+            background: #000000;
+            transform: rotateY(180deg);
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover; /* Ensure the video covers the entire screen */
+        }
+    </style>
+</head>
+<body>
+    <video id="video-background" autoplay muted loop>
+        <source src="/Styles/Pics/login.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <div class="card-front">
+                            <form id="loginForm" class="form">
+                                <h2 class="text-center mb-4 text-white">Login</h2>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="Email address" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                <p class="text-center mt-3"><a href="#" id="showSignup">Create an account</a></p>
+                            </form>
+                        </div>
+                        <div class="card-back">
+                            <form id="signupForm" class="form">
+                                <h2 class="text-center mb-4 text-white">Signup</h2>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="signupName" placeholder="Full Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="signupEmail" placeholder="Email address" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block ">Signup</button>
+                                <p class="text-center mt-3"><a href="#" id="showLogin">Already have an account?</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const card = document.querySelector('.card');
+
+            // Handle showing signup form
+            document.getElementById('showSignup').addEventListener('click', function(e) {
+                e.preventDefault();
+                card.classList.add('flipped');
+            });
+
+            // Handle showing login form
+            document.getElementById('showLogin').addEventListener('click', function(e) {
+                e.preventDefault();
+                card.classList.remove('flipped');
+            });
+
+            // Handle login form submission
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                const savedEmail = localStorage.getItem('email');
+                const savedPassword = localStorage.getItem('password');
+
+                if (email === savedEmail && password === savedPassword) {
+                    // Login successful, redirect to homepage
+                    window.location.href = 'homepage.html';
+                } else {
+                    Toastify({
+
+text: "Invalid Password or Email, Try Again Please!",
+
+duration: 3000
+
+}).showToast();
+                }
+            });
+
+            // Handle signup form submission
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('signupName').value;
+                const email = document.getElementById('signupEmail').value;
+                const password = document.getElementById('signupPassword').value;
+
+                // Store user data in local storage
+                localStorage.setItem('name', name);
+                localStorage.setItem('email', email);
+                localStorage.setItem('password', password);
+
+                // Reset form and show login form
+                signupForm.reset();
+                card.classList.remove('flipped');
+                alert('Signup successful! Please login to continue.');
+            });
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+</html>
